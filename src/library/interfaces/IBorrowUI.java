@@ -1,27 +1,28 @@
+
 package library.interfaces;
 
+import library.interfaces.EBorrowState;
+
 public interface IBorrowUI {
+	void setState(EBorrowState var1);
 
-	public void setState(EBorrowState state);
-	
-	public void displayMemberDetails(int memberID, String memberName, String memberPhone);
+	void displayMemberDetails(int var1, String var2, String var3);
 
-	public void displayExistingLoan(String loanDetails);
+	void displayExistingLoan(String var1);
 
-	public void displayOverDueMessage();
-	
-	public void displayAtLoanLimitMessage();
-	
-	public void displayOutstandingFineMessage(float amountOwing);
+	void displayOverDueMessage();
 
-	public void displayOverFineLimitMessage(float amountOwing);
+	void displayAtLoanLimitMessage();
 
-	public void displayScannedBookDetails(String bookDetails);
+	void displayOutstandingFineMessage(float var1);
 
-	public void displayPendingLoan(String loanDetails);
-	
-	public void displayConfirmingLoan(String loanDetails);
-	
-	public void displayErrorMessage(String errorMesg);
-	
+	void displayOverFineLimitMessage(float var1);
+
+	void displayScannedBookDetails(String var1);
+
+	void displayPendingLoan(String var1);
+
+	void displayConfirmingLoan(String var1);
+
+	void displayErrorMessage(String var1);
 }

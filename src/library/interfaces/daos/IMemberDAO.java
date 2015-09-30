@@ -1,21 +1,19 @@
+
 package library.interfaces.daos;
 
 import java.util.List;
-
 import library.interfaces.entities.IMember;
 
 public interface IMemberDAO {
+	IMember addMember(String var1, String var2, String var3, String var4);
 
-		public IMember addMember(String firstName, String lastName, String ContactPhone, String emailAddress);
-		
-		public IMember getMemberByID(int id);
-		
-		public List<IMember> listMembers();
-		
-		public List<IMember> findMembersByLastName(String lastName);
+	IMember getMemberByID(int var1);
 
-		public List<IMember> findMembersByEmailAddress(String emailAddress);
-		
-		public List<IMember> findMembersByNames(String firstName, String lastName);
+	List<IMember> listMembers();
 
+	List<IMember> findMembersByLastName(String var1);
+
+	List<IMember> findMembersByEmailAddress(String var1);
+
+	List<IMember> findMembersByNames(String var1, String var2);
 }
