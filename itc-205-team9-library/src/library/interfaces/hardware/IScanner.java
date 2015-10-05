@@ -1,4 +1,7 @@
+
 package library.interfaces.hardware;
+
+import library.interfaces.hardware.IScannerListener;
 
 public interface IScanner {
 	

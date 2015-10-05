@@ -57,6 +57,10 @@ public class Loan implements ILoan {
         return this.state == ELoanState.OVERDUE;
     }
 
+    public boolean isCurrent() {
+        return this.state == ELoanState.CURRENT;
+    }
+
     public boolean checkOverDue(Date currentDate) {
         if(this.state != ELoanState.CURRENT && this.state != ELoanState.OVERDUE) {
             throw new RuntimeException(String.format("Loan : checkOverDue : incorrect state transition  : %s -> %s\n", new Object[]{this.state, ELoanState.OVERDUE}));
@@ -68,27 +72,6 @@ public class Loan implements ILoan {
             return this.isOverDue();
         }
     }
-
-    public IMember getBorrower() {
-        return this.borrower;
-    }
-
-    public IBook getBook() {
-        return this.book;
-    }
-
-    public int getID() {
-        return this.id;
-    }
-
-    public ELoanState getState() {
-        return this.state;
-    }
-
-    public String toString() {
-        return String.format("Loan ID:  %d\nAuthor:   %s\nTitle:    %s\nBorrower: %s %s\nBorrowed: %s\nDue Date: %s", new Object[]{Integer.valueOf(this.id), this.book.getAuthor(), this.book.getTitle(), this.borrower.getFirstName(), this.borrower.getLastName(), DateFormat.getDateInstance().format(this.borrowDate), DateFormat.getDateInstance().format(this.dueDate)});
-    }
-}
 
     public IMember getBorrower() {
         return this.borrower;
