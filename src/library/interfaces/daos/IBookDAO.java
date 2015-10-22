@@ -1,19 +1,21 @@
-
 package library.interfaces.daos;
 
 import java.util.List;
+
 import library.interfaces.entities.IBook;
 
 public interface IBookDAO {
-	IBook addBook(String var1, String var2, String var3);
+	
+	public IBook addBook(String author, String title, String callNo);
+	
+	public IBook getBookByID(int id);
+	
+	public List<IBook> listBooks();
+	
+	public List<IBook> findBooksByAuthor(String author);
 
-	IBook getBookByID(int var1);
+	public List<IBook> findBooksByTitle(String title);
+	
+	public List<IBook> findBooksByAuthorTitle(String author, String title);
 
-	List<IBook> listBooks();
-
-	List<IBook> findBooksByAuthor(String var1);
-
-	List<IBook> findBooksByTitle(String var1);
-
-	List<IBook> findBooksByAuthorTitle(String var1, String var2);
 }

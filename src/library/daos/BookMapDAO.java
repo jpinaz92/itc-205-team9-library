@@ -108,4 +108,3 @@ public class BookMapDAO implements IBookDAO {
         return this.nextId++;
     }
 }
-

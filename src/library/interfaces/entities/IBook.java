@@ -1,29 +1,27 @@
-
 package library.interfaces.entities;
 
-import library.interfaces.entities.EBookState;
-import library.interfaces.entities.ILoan;
-
 public interface IBook {
-	void borrow(ILoan var1);
+	
+	public void borrow(ILoan loan);
+	
+	public ILoan getLoan();
+	
+	public void returnBook(boolean damaged);
+	
+	public void lose();
+	
+	public void repair();
+	
+	public void dispose();	
+	
+	public EBookState getState();
+	
+	public String getAuthor();
+	
+	public String getTitle();
+	
+	public String getCallNumber();
+	
+	public int getID();
 
-	ILoan getLoan();
-
-	void returnBook(boolean var1);
-
-	void lose();
-
-	void repair();
-
-	void dispose();
-
-	EBookState getState();
-
-	String getAuthor();
-
-	String getTitle();
-
-	String getCallNumber();
-
-	int getID();
 }

@@ -1,12 +1,7 @@
-
 package library.interfaces.entities;
 
 public enum ELoanState {
-	PENDING,
-	CURRENT,
-	OVERDUE,
-	COMPLETE;
+	
+	PENDING, CURRENT, OVERDUE, COMPLETE
 
-	private ELoanState() {
-	}
 }

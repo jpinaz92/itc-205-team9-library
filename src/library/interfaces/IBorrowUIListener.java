@@ -1,12 +1,13 @@
-
 package library.interfaces;
 
 public interface IBorrowUIListener {
-	void cancelled();
+	
+	public void cancelled();
+	
+	public void scansCompleted();
+	
+	public void loansConfirmed();
+	
+	public void loansRejected();
 
-	void scansCompleted();
-
-	void loansConfirmed();
-
-	void loansRejected();
 }
