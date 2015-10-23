@@ -7,6 +7,8 @@ import library.hardware.Scanner;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import library.interfaces.IMainListener;
 import library.interfaces.daos.IBookDAO;
@@ -16,6 +18,13 @@ import library.interfaces.entities.IBook;
 import library.interfaces.entities.ILoan;
 import library.interfaces.entities.IMember;
 import library.panels.MainPanel;
+
+import library.entities.TestLoan;
+import library.entities.TestMember;
+import library.hardware.TestCardReader;
+import library.daos.TestLoanDAO;
+
+
 
 public class Main implements IMainListener {
 
@@ -27,6 +36,10 @@ public class Main implements IMainListener {
 	private IBookDAO bookDAO;
 	private ILoanDAO loanDAO;
 	private IMemberDAO memberDAO;
+        private TestLoanDAO tLoanDAO;
+        private TestCardReader tReader;
+        private TestMember tMember;
+        
 	
 	public Main() {
 		reader = new CardReader();
@@ -125,7 +138,20 @@ public class Main implements IMainListener {
             public void run() {
             	main.display.setDisplay(new MainPanel(main), "Main Menu");
                 main.showGUI();
-                
+              
+            }
+            
+            public void test(){
+                  try {
+                    main.tReader.testSetEnabled();
+                } catch (Exception ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                  
+                  main.tMember.IDLessThanZero();
+                  main.tLoanDAO.testConstructor();
+                  main.tLoanDAO.testCommit();
+                  main.tLoanDAO.testCreateLoan();
             }
         });
 	}
